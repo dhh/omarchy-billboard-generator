@@ -1,6 +1,6 @@
 # Contributing
 
-Use Node 24+ (or Node 22.13+), Chromium, ffmpeg and ffprobe. Run `npm ci` to install development dependencies. `install.sh` installs production dependencies only, so rerun `npm ci` before development checks.
+Use Node 24+ (or Node 22.13+), Chromium, ffmpeg and ffprobe. Run `npm ci` to install development dependencies. `install.sh` installs a published release separately from the checkout; it does not prepare development dependencies.
 
 ## Checks
 
@@ -22,6 +22,14 @@ Unit tests cover options, themes, assets, geometry, fonts, synchronization, requ
 Inside a graphical Omarchy session, `npm run test:app-window` opens and closes a test app window. Add `-- --sighup` to test terminal-hangup cleanup. Other tests do not need an interactive desktop.
 
 Visual baselines are Chromium/environment-specific. Use `npm run test:visual -- --update` only after inspecting the change. Never update baselines just to hide a failure. Generated reports, screenshots, videos and caches stay out of Git.
+
+## Releases
+
+Set a stable version in `package.json` and the lockfile, run tests and the public-file audit, then commit and tag that commit `vX.Y.Z`. `npm run build:release` archives committed files only and produces the source archive, standalone `installer.mjs` and `SHA256SUMS` under `.cache/releases/vX.Y.Z/`. Upload all three files to a draft GitHub release on the matching tag, then publish it after checking the assets. Never replace the assets of a published version; publish a new version instead.
+
+The bootstrap fetches the latest release installer. The installer resolves a version once and downloads the archive and checksum from that version's release. Updates use per-user locking, private staging, a package-identity check, locked production dependencies without lifecycle scripts, a CLI startup check, and an atomic active-version link. Checksums provide integrity, not an independent signature or a defense against compromised upstream accounts/dependencies. Updates run the currently installed manager; rerunning the bootstrap obtains the latest installer when manager fixes are needed. Previous release directories are deliberately retained, not automatically pruned, because a process may still be using an older version.
+
+Development tests isolate runtime data with `BILLBOARD_DATA_DIR` and `BILLBOARD_CACHE_DIR`. Set `BILLBOARD_TEST_TMPDIR` to a short writable directory if the checkout path exceeds Chromium's socket limits.
 
 ## Code quality
 

@@ -11,23 +11,26 @@ This is a community project, not an official Omarchy product or endorsement.
 Install missing system dependencies through Omarchy's package manager:
 
 ```bash
-omarchy pkg add git nodejs npm chromium ffmpeg
+omarchy pkg add nodejs npm curl tar chromium ffmpeg
 ```
 
-Clone somewhere you want to keep the application, then run the installer as your normal user:
+Run the installer as your normal user, not with sudo. No Git or permanent checkout is required:
 
 ```bash
-git clone https://github.com/llstrk/omarchy-billboard-generator.git
-cd omarchy-billboard-generator
-./install.sh
+curl -fsSL https://raw.githubusercontent.com/llstrk/omarchy-billboard-generator/main/install.sh | bash
 ```
 
-The installer installs pinned production dependencies and adds:
+If you prefer to inspect scripts before executing them, review [`install.sh`](install.sh), then download `installer.mjs` and `SHA256SUMS` from the same [GitHub Release](https://github.com/llstrk/omarchy-billboard-generator/releases). Check with `sha256sum -c --ignore-missing SHA256SUMS`, review the installer, then run `node installer.mjs`. To select a version through the bootstrap, pipe it to `bash -s -- --version v0.1.0` instead of `bash`.
 
-- `omarchy-billboard` and `omarchy-billboard-app` in `~/.local/bin`.
+The installer downloads a versioned release, checks its SHA-256 digest, rejects unsafe archive entries, and installs locked production dependencies without npm lifecycle scripts. It adds:
+
+- `omarchy-billboard`, `omarchy-billboard-app` and `omarchy-billboard-manage` in `~/.local/bin`.
 - **Omarchy Billboard Generator** in your application launcher.
+- Application versions in `~/.local/share/omarchy-billboard-generator/releases/`, with an atomic `current` link.
 
-It respects `XDG_DATA_HOME`, refuses to replace unrelated launcher/command files, and does not modify shell, Hyprland or Omarchy configuration. No root access is needed for the application installation. Keep the checkout in place: the commands and launcher reference it. If your shell does not already include `~/.local/bin` in `PATH`, add it to your shell configuration or invoke the commands by their full paths.
+It respects `XDG_DATA_HOME` and `XDG_CACHE_HOME`, refuses to replace unrelated command/launcher files, and does not modify shell, Hyprland or Omarchy configuration. No root access is needed for the application installation. If your shell does not already include `~/.local/bin` in `PATH`, add it to your shell configuration or invoke the commands by their full paths.
+
+The bootstrap and release installer are executable code fetched over HTTPS from this project's GitHub account. Release checksums detect corrupted or mismatched downloads, not a compromised publisher: they are not independent signatures. System dependencies and npm packages also require network access during installation.
 
 Launch the app from the application launcher or run:
 
@@ -40,17 +43,24 @@ omarchy-billboard-app
 Close the app before updating:
 
 ```bash
-git pull --ff-only
-./install.sh
+omarchy-billboard-manage update
 ```
 
-Rerun the installer after changing your Node.js installation. To remove the installed commands and launcher:
+Plain `update` reports when the latest version is already installed, without downloading and installing it again. The new release and dependencies are prepared before switching the active version. Failed downloads, dependency installation and ordinary activation errors preserve the previous installation. Older releases are retained until uninstall so an existing process is not deprived of its files, including across several updates. This uses additional disk space for each installed version; explicit reinstalls also retain a copy. To reinstall or select a particular published version:
 
 ```bash
-./install.sh --uninstall
+omarchy-billboard-manage update --version v0.1.0
 ```
 
-Uninstall keeps your checkout, caches, modified launcher files and exported videos. Remove the checkout separately if no longer needed.
+To remove the application and its owned commands/launcher, without deleting videos, synced data, caches or modified launcher files:
+
+```bash
+omarchy-billboard-manage uninstall
+```
+
+The manager can also be invoked as `~/.local/bin/omarchy-billboard-manage`. A killed installer or power failure can leave its lock or staging files. Do not remove the lock while an installation is running; inspect the installation directory before retrying. This is not a crash-proof filesystem transaction.
+
+**Older checkout-based installations:** run the original checkout's `./install.sh --uninstall` before replacing/updating that checkout or using the new installer. Your exported videos remain untouched. A previously synced `.cache/upstream.json` can be copied to the user data directory if you want to retain that snapshot.
 
 ### Other Linux distributions or development
 
@@ -76,7 +86,7 @@ The interface follows the active Omarchy desktop palette without changing deskto
 - Inspect layout, contrast and encoding notes in the preview.
 - Export to your configured Videos folder. **Auto** names files `omarchy-<suffix>-<language>.mp4`.
 - Enable **Overwrite** to replace an existing file. Replacement happens only after successful rendering and verification.
-- Open completed exports in your external player or output folder. **Auto play** is optional and off by default.
+- Open completed exports in your external player or output folder. **Auto play** is checked by default; uncheck it to disable automatic external playback.
 
 Changing Animation during playback restarts the new effect and keeps playing. Other edits preserve playback position. Paused edits preserve the selected frame. Editor selections and imported palettes last for the current session; videos and explicitly synced website data persist.
 
@@ -140,7 +150,7 @@ omarchy-billboard sync
 omarchy-billboard sync --revision 5f908e4a85b8a4594be73db725906cf656660823
 ```
 
-Sync resolves one upstream commit, validates all data and atomically replaces `.cache/upstream.json` in the checkout. Failed sync preserves the previous snapshot. Remove that cache file to restore bundled data. Sync does not update executable animation assets, fonts, campaign palettes or custom imports. Downloaded TypeScript is parsed as data, not executed.
+Sync resolves one upstream commit, validates all data and atomically replaces `upstream.json` in the user data directory (normally `~/.local/share/omarchy-billboard-generator/`). Failed sync preserves the previous snapshot. Remove that cache file to restore bundled data. Sync does not update executable animation assets, fonts, campaign palettes or custom imports. Downloaded TypeScript is parsed as data, not executed.
 
 MP4 metadata records settings, translations, upstream revisions and simulation information. Custom palette data is embedded without its input file path. No sidecar is created.
 
@@ -148,7 +158,7 @@ MP4 metadata records settings, translations, upstream revisions and simulation i
 
 - Executables are detected on `PATH`. Override them using `BILLBOARD_CHROMIUM`, `BILLBOARD_FFMPEG` or `BILLBOARD_FFPROBE`, each containing a path/name, not shell arguments.
 - Browser work uses temporary directories and respects `TMPDIR`. Linux Chromium sockets require a short temporary path. Long checkout paths are supported.
-- The checkout's `.cache/` holds npm/sync data and development artifacts. It must be writable.
+- Synced data lives in the user data directory, outside versioned application files. npm and generated desktop-entry caches use the user cache directory, normally `~/.cache/omarchy-billboard-generator/`. Development artifacts remain in the checkout's ignored `.cache/`.
 - Encoding uses a temporary file beside the destination and publishes only after verification. No-clobber output requires hard-link support; use a supporting filesystem or explicit replacement when appropriate.
 - SIGINT, SIGTERM and SIGHUP cancel work and clean owned temporary resources. A forced kill or power loss can leave temporary files; inspect them only when no render is running.
 - Preview playback may drop frames on heavy canvases. Exported videos still contain all 375 frames.

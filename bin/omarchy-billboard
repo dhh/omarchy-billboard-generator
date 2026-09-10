@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
+import { userDataDirectory } from '../src/user-paths.js';
 import { loadSnapshot, syncSnapshot } from '../src/snapshot.js';
 import { parseOptions } from '../src/options.js';
 import { availableThemes } from '../src/themes.js';
@@ -14,7 +15,7 @@ const help = `Usage: omarchy-billboard [options]
   --animation ID        Opening effect from --list-animations
   --tld .org            Domain suffix, including multi-label and IDN/Punycode
   --language en         Any locale in --list-languages
-  --theme astral     Any theme in --list-themes
+  --theme astral        Any theme in --list-themes
   --theme-file FILE     Use a custom JSON palette instead of --theme
   --background theme    Canvas background: theme, black or white
   --resolution 900x240  Any positive WIDTHxHEIGHT, including square and portrait
@@ -28,14 +29,14 @@ Relative output paths use your current directory. Existing files require --force
 Odd dimensions are padded by one pixel for H.264/yuv420p.
 Set BILLBOARD_CHROMIUM, BILLBOARD_FFMPEG or BILLBOARD_FFPROBE to override executable detection.
 Sync updates website copy and palettes, not the pinned animation runtime.
-Sync and browser temporary files use the project-local .cache directory.
+Synced data uses your user data directory. Browser temporary files respect TMPDIR.
 Normal rendering never fetches upstream data or external assets.`;
 
 const controller = new AbortController();
 const interrupt = signal => { controller.abort(new Error(`Interrupted by ${signal}.`)); };
 const handlers = new Map(['SIGINT', 'SIGTERM', 'SIGHUP'].map(signal => [signal, () => interrupt(signal)]));
 for (const [signal, handler] of handlers) process.once(signal, handler);
-const cache = fileURLToPath(new URL('../.cache/upstream.json', import.meta.url));
+const cache = join(userDataDirectory(), 'upstream.json');
 async function selectedSnapshot() {
   try { return await loadSnapshot(cache); }
   catch (error) {

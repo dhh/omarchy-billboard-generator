@@ -5,6 +5,7 @@ import { randomBytes, randomUUID } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { root as projectRoot } from './render.js';
 import { videosDirectory } from './user-directories.js';
+import { userDataDirectory } from './user-paths.js';
 import { prepareRenderConfig } from './render-config.js';
 import { loadSnapshot, syncSnapshot } from './snapshot.js';
 import { parseOptions } from './options.js';
@@ -90,7 +91,7 @@ export async function startAppServer(options = {}) {
   const overrides = Object.fromEntries(Object.entries(options).filter(([, value]) => value !== undefined));
   const { render, openPath, onShutdown, sync } = { ...defaults, ...overrides };
   const readDesktopTheme = createDesktopThemeReader(options.desktopThemeDirectories);
-  const root = await realpath(projectRoot), cacheFile = join(root, '.cache/upstream.json');
+  const root = await realpath(projectRoot), cacheFile = join(userDataDirectory(), 'upstream.json');
   let snapshot = await initialData(options.snapshot, cacheFile);
   const output = await outputRoot(options.outputDirectory);
   const token = randomBytes(32).toString('hex'), cookieName = `billboard_${token.slice(0, 12)}`;

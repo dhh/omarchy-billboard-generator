@@ -21,4 +21,5 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: npm run test:install
+      - run: npm run test:release-install
       - run: npm run audit:public

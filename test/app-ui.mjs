@@ -47,7 +47,8 @@ try {
   assert.ok(!page.url().includes('token='));
   assert.equal(await page.locator('#quit, #desktop-theme, #domain-note, #play-export, #back-preview, video').count(), 0);
   assert.equal(await page.locator('label:has(#force)').innerText(), 'Overwrite');
-  assert.ok(!await page.locator('#auto-play').isChecked());
+  assert.ok(await page.locator('#auto-play').isChecked());
+  await page.locator('#auto-play').uncheck();
   const overwriteToggle = await page.locator('label:has(#force)').boundingBox();
   const autoPlayToggle = await page.locator('label:has(#auto-play)').boundingBox();
   assert.ok(autoPlayToggle.x > overwriteToggle.x && Math.abs(autoPlayToggle.y - overwriteToggle.y) < 2);

@@ -1,6 +1,6 @@
 {
   "name": "omarchy-billboard-generator",
-  "version": "0.1.0-dev",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "bin": {
@@ -26,7 +26,9 @@
     "app": "node bin/omarchy-billboard-app",
     "start": "node bin/omarchy-billboard",
     "test:install": "node --import ./test/environment.js test/install.mjs",
-    "audit:public": "node scripts/audit-public.mjs"
+    "audit:public": "node scripts/audit-public.mjs",
+    "build:release": "node scripts/build-release.mjs",
+    "test:release-install": "node --import ./test/environment.js test/release-install.mjs"
   },
   "dependencies": {
     "fontkit": "^2.0.4",

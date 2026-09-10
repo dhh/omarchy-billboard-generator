@@ -8,13 +8,13 @@ async function main() {
 
 Starts the local interface in a standalone Chromium window.
   --no-window     Print a local browser URL instead. Stop with Ctrl+C.
-  --desktop-file  Prepare a .desktop launcher under .cache/app without installing it.
+  --desktop-file  Prepare a .desktop launcher in the user cache without installing it.
 
 Exports default to your configured Videos folder. Closing the app cancels an active export.
-Use ./install.sh to install user-level commands and the app launcher.`); return; }
+Installed apps can be updated with omarchy-billboard-manage update.`); return; }
   if (values['desktop-file'] && values['no-window']) throw Error('Choose either --desktop-file or --no-window.');
   if (values['desktop-file']) {
-    console.log(`Prepared ${await prepareDesktopEntry()}\nUse ./install.sh to add the app to your application launcher.`); return;
+    console.log(`Prepared ${await prepareDesktopEntry()}\nThe release installer adds the application launcher automatically.`); return;
   }
   await launchApp({ noWindow: values['no-window'] ?? false });
 }

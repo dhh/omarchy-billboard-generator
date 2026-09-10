@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { userCacheDirectory } from './user-paths.js';
 import { root, executable } from './render.js';
 import { startAppServer, APP_PATH } from './app-server.js';
 
@@ -9,7 +10,7 @@ import { startAppServer, APP_PATH } from './app-server.js';
 const windowClass = `chrome-127.0.0.1_${APP_PATH.replaceAll('/', '_')}-Default`;
 
 export async function prepareDesktopEntry() {
-  const directory = join(root, '.cache/app'); await mkdir(directory, { recursive: true });
+  const directory = join(userCacheDirectory(), 'app'); await mkdir(directory, { recursive: true });
   const quote = value => '"' + value.replaceAll('\\', '\\\\\\\\').replace(/["`$]/g, c => '\\\\' + c).replaceAll('%', '%%') + '"';
   const path = join(directory, `${windowClass}.desktop`);
   if (/[\r\n]/.test(root + process.execPath)) throw Error('Desktop entries cannot contain newlines in executable paths.');
