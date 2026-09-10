@@ -6,6 +6,27 @@ Create animated OMARCHY domain videos with a local desktop app or CLI. Choose a 
 
 This is a community project, not an official Omarchy product or endorsement.
 
+## Screenshots
+
+The default Astral theme with the completed domain and tagline:
+
+![App overview showing the Astral theme, completed OMARCHY.ORG composition, preview controls and export settings](docs/screenshots/astral-overview.png)
+
+<details>
+<summary>See the native laser animation and Blackhole effect</summary>
+
+### Native laser and embers
+
+![Astral campaign animation in progress, with the native laser, sparks and ember piles](docs/screenshots/native-laser.png)
+
+### Blackhole in Full HD
+
+![Blackhole animation using the Hackerman palette on a Full HD canvas](docs/screenshots/blackhole-full-hd.png)
+
+</details>
+
+The output-folder label is generalized for privacy; the rest is captured directly from the app.
+
 ## Install on Omarchy
 
 Install missing system dependencies through Omarchy's package manager:
