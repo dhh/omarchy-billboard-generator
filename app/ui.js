@@ -162,6 +162,7 @@ async function waitForPreview(iframe, version) {
 }
 function activatePreview(win, data) {
   previewWindow = win; previewId = data.id; seek(currentFrame);
+  win.document.addEventListener('keydown', playbackShortcut);
   showWarnings([...previewWarnings, ...win.layout.warnings]);
   $('preview-detail').textContent = `Preview fitted to window. Export: ${data.options.width} × ${data.options.height} at 25 fps.`;
   $('loading').hidden = true; controls();
@@ -251,9 +252,24 @@ $('play').addEventListener('click', play);
 $('restart').addEventListener('click', () => navigateTimeline(0));
 $('scrubber').addEventListener('input', () => navigateTimeline(Number($('scrubber').value)));
 for (const button of document.querySelectorAll('[data-frame]')) button.addEventListener('click', () => navigateTimeline(Number(button.dataset.frame)));
-document.addEventListener('keydown', event => {
-  if (event.code === 'Space' && !event.target.closest('input,select,button,textarea')) { event.preventDefault(); play(); }
-});
+function isTextEntry(target) {
+  if (target.isContentEditable) return true;
+  const input = target.closest?.('input,textarea');
+  return input && !['checkbox', 'radio', 'range', 'button', 'submit', 'reset'].includes(input.type);
+}
+function usesNativeSpace(target) {
+  return isTextEntry(target) || target.closest?.('button,input[type="checkbox"],input[type="radio"],input[type="button"],input[type="submit"],input[type="reset"]');
+}
+function isPlaybackKey(event) {
+  return event.code === 'Space' && !event.isComposing && !event.ctrlKey && !event.altKey && !event.metaKey;
+}
+function playbackShortcut(event) {
+  if (!isPlaybackKey(event) || usesNativeSpace(event.target)) return;
+  event.preventDefault();
+  if (event.repeat || playbackUnavailable()) return;
+  play();
+}
+document.addEventListener('keydown', playbackShortcut);
 $('cancel').addEventListener('click', async () => {
   if (!currentJob) return; $('cancel').disabled = true;
   try { displayJob(await api(`/api/jobs/${currentJob.id}/cancel`, { body: {} })); } catch (error) { showError(error.message); }

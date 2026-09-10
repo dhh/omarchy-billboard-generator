@@ -109,6 +109,8 @@ The interface follows the active Omarchy desktop palette without changing deskto
 - Enable **Overwrite** to replace an existing file. Replacement happens only after successful rendering and verification.
 - Open completed exports in your external player or output folder. **Auto play** is checked by default; uncheck it to disable automatic external playback.
 
+Press **Space** to play/pause, including when a dropdown, timeline scrubber or the preview has focus. Text-entry fields, buttons and checkboxes keep their normal keyboard behavior. Holding Space does not repeatedly toggle the playback shortcut.
+
 Changing Animation during playback restarts the new effect and keeps playing. Other edits preserve playback position. Paused edits preserve the selected frame. Editor selections and imported palettes last for the current session; videos and explicitly synced website data persist.
 
 For a browser tab instead of an app window:
