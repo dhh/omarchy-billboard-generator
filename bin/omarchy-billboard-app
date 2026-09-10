@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+import { parseArgs } from 'node:util';
+import { launchApp, prepareDesktopEntry } from '../src/app-launcher.js';
+
+async function main() {
+  const { values } = parseArgs({ options: { help: { type: 'boolean', short: 'h' }, 'no-window': { type: 'boolean' }, 'desktop-file': { type: 'boolean' } } });
+  if (values.help) { console.log(`Usage: omarchy-billboard-app [--no-window | --desktop-file]
+
+Starts the local interface in a standalone Chromium window.
+  --no-window     Print a local browser URL instead. Stop with Ctrl+C.
+  --desktop-file  Prepare a .desktop launcher under .cache/app without installing it.
+
+Exports default to your configured Videos folder. Closing the app cancels an active export.
+Use ./install.sh to install user-level commands and the app launcher.`); return; }
+  if (values['desktop-file'] && values['no-window']) throw Error('Choose either --desktop-file or --no-window.');
+  if (values['desktop-file']) {
+    console.log(`Prepared ${await prepareDesktopEntry()}\nUse ./install.sh to add the app to your application launcher.`); return;
+  }
+  await launchApp({ noWindow: values['no-window'] ?? false });
+}
+try { await main(); }
+catch (error) { console.error(`Error: ${error.message}`); process.exitCode = 1; }

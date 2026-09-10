@@ -1,0 +1,1042 @@
+{
+  "schemaVersion": 2,
+  "repository": "omacom/omarchy-site",
+  "commit": "5f908e4a85b8a4594be73db725906cf656660823",
+  "sources": {
+    "src/lib/site-themes.ts": "943932c6be2143da73a54ecc366d11c5a665f3ce66e5c7f2db4ee6bdcc4caf70",
+    "src/styles.css": "23e328d939eff77d66537455de6394ff587539cf359e6bc618d217e66f236dda",
+    "src/lib/brand-downloads.ts": "7cdb4cf0bd75e3109dafa942dbd18a28b70ff16ab775eb32648b381203bd85a5",
+    "src/i18n/locales.json": "57a36417bb508d9394a33c6dd4c10cad4e3965b84abc27e62fb5680140a9d847",
+    "src/i18n/messages/en.json": "18fc69afe0d7c9ba2758ea236d77dce82248c6d82a609ab7a883db054460bf12",
+    "src/i18n/messages/da.json": "03037c1c2bb2afee16498d11e02354affb7d8f4b2be3388722a9c914a5efb468",
+    "src/i18n/messages/ar.json": "3b913a5aeaf8b2fead7483039c7149f1f04a1026ad71b2cd3e74c445d9b0182a",
+    "src/i18n/messages/fi.json": "2f3ef3b57d3bb017a699975174de9337a39df38225d825edec43a4365638392d",
+    "src/i18n/messages/fr.json": "b82fe2de02f24766e4ec8880013b45d933552acf1f4bc1011d6277a11765f1aa",
+    "src/i18n/messages/el.json": "150b2a296e9dfb56925561b55b6cfe8e612a86a51b12bb2283ff449e2af05269",
+    "src/i18n/messages/hu.json": "9f13381d6511a74f342f175167f380f8bcdf938981a1efb31a050a5dcac965a2",
+    "src/i18n/messages/hi.json": "8c8d6cb2da20dba23443d836540ed21187ffcf42d1f1a1e837d6e09a3cff16d9",
+    "src/i18n/messages/is.json": "5003f220f8c7193f93dc9ea2b83ef6cee09bfa7d8d2623492ad8b236d50be944",
+    "src/i18n/messages/ja.json": "f0f63ed072afbf368e649b21edcdd0956d68a0200a636555bcb823af263f3509",
+    "src/i18n/messages/ko.json": "d79dedde8b53ec9dec4b3575b17dedb3cbf6aa83c835491e4e8ebecf3c423da3",
+    "src/i18n/messages/es-MX.json": "66b8b3c14ca6831bf358e460251f22b6c03af79799c860f8acf3c99e479c00ac",
+    "src/i18n/messages/fil.json": "27d0c18d883b7478e8aeb39fa7fed57afe52ad681c2c7861e6e8a7429c2dedc7",
+    "src/i18n/messages/pt.json": "261689b97d243b6baa17a1e48f88f5fa5a93dda92841cc2c5ae22206b6042c7f",
+    "src/i18n/messages/sv.json": "25f7492838ea1d02266030d5ec613eb5630b56cd67423d9ec33ed22ad237e187",
+    "src/i18n/messages/tr.json": "5f10bbfb02fe27f32e2a5ec22abd663bfa6bd4b48847bf49240a708e7b330541",
+    "src/i18n/messages/vi.json": "32a86788c7759011653a6445fcc11806f4deb48666d1c44e4803adfb7a0ee95e",
+    "src/i18n/messages/ur.json": "e7b5dce2a91b2994dda03bf7e96c867c52acc95c3e7f44cc51f9bc6628e84f19",
+    "src/i18n/messages/bn.json": "94a3f4a658ddfa31b27733ee8ed3dd352c1d40c35eae7e9b10c09cabaf8fd28c",
+    "src/i18n/messages/ca.json": "7858a00fb41c024f3d00f0b4e333c277e300b74f51e1abfa18dda26d728e793d",
+    "src/i18n/messages/si.json": "65a09687af6df6d2aec0ba234a320346dad5daf6d483d70238f45855c88ebf6e",
+    "src/i18n/messages/ta.json": "fdf003e3d2f781e6d5816d6c31b3b1a300c15ed01a49b017e1c9e431cc7917eb",
+    "src/i18n/messages/th.json": "679b022161fa3cfff5f0edbf40e1a5eb62879ff3673aa16892882a11d2142955",
+    "src/i18n/messages/uz.json": "7335f7b5b352061eae077d54bf10edbb7fe7decb0a89309d6af6c5435e2ecc8e",
+    "src/i18n/messages/it.json": "c602dac879957725f2d749e31e87b6fc76ba3d97f344e2a499e468083d39e871",
+    "src/i18n/messages/zh-CN.json": "23d1c1035a73d4400e8af469540e293010a9863116b6ae5d01e68af7d01a00e0",
+    "src/i18n/messages/pl.json": "c8e81700c5c9756fb2488c73ed2d13efd6fe84044c9a88a69b335577b4a120ab",
+    "src/i18n/messages/lt.json": "ccd8e7ec16a7fbf04d0cb59bb4c4da159c123c96a37572571b18fc6ee48dd33e",
+    "src/i18n/messages/ga.json": "ed1f2e0c6f2b34e619bcf4eec8f38d4edaa07efc420e6aacaa3e4c92a53bc943",
+    "src/i18n/messages/nl.json": "4310f795f807149204e9524835bf44ef036880f3a433feeb7d5bb96a930279df",
+    "src/i18n/messages/no.json": "9758ba0a8bbc5f0fc2d9b078b0d2a1834702d120a469429078e5ecfc228f31e2"
+  },
+  "themes": [
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin",
+      "light": false,
+      "background": "#1e1e2e",
+      "brand": "#89b4fa",
+      "gradient": [
+        {
+          "color": "#d2e2fd",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#accafc",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#89b4fa",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#5b76a4",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#34415c",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "catppuccin-latte",
+      "name": "Catppuccin Latte",
+      "light": true,
+      "background": "#eff1f5",
+      "brand": "#1e66f5",
+      "gradient": [
+        {
+          "color": "#103887",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#1750bf",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#1e66f5",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#6491ec",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#a0b6e4",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "ethereal",
+      "name": "Ethereal",
+      "light": false,
+      "background": "#060b1e",
+      "brand": "#7d82d9",
+      "gradient": [
+        {
+          "color": "#ced0f1",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a4a8e4",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#7d82d9",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#4f538d",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#282b4c",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "everforest",
+      "name": "Everforest",
+      "light": false,
+      "background": "#2d353b",
+      "brand": "#7fbbb3",
+      "gradient": [
+        {
+          "color": "#cee5e2",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a5cfca",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#7fbbb3",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#587f7b",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#374c4c",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "flexoki-light",
+      "name": "Flexoki Light",
+      "light": true,
+      "background": "#fffcf0",
+      "brand": "#205ea6",
+      "gradient": [
+        {
+          "color": "#12345b",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#194981",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#205ea6",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#6b90b9",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#aabac9",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "gruvbox",
+      "name": "Gruvbox",
+      "light": false,
+      "background": "#282828",
+      "brand": "#7daea3",
+      "gradient": [
+        {
+          "color": "#cee0dc",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a4c6bf",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#7daea3",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#56746d",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#354440",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "hackerman",
+      "name": "Hackerman",
+      "light": false,
+      "background": "#0b0c16",
+      "brand": "#82fb9c",
+      "gradient": [
+        {
+          "color": "#d0fdd9",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a8fcba",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#82fb9c",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#539e65",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#2b5037",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "kanagawa",
+      "name": "Kanagawa",
+      "light": false,
+      "background": "#1f1f28",
+      "brand": "#dcd7ba",
+      "gradient": [
+        {
+          "color": "#f2f0e5",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#e6e3cf",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#dcd7ba",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#8f8c7c",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#4e4c47",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "last-horizon",
+      "name": "Last Horizon",
+      "light": false,
+      "background": "#0c0b0c",
+      "brand": "#b59790",
+      "gradient": [
+        {
+          "color": "#e3d7d5",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#cbb6b1",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#b59790",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#72605c",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#3a322f",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "lumon",
+      "name": "Lumon",
+      "light": false,
+      "background": "#16242d",
+      "brand": "#8bc9eb",
+      "gradient": [
+        {
+          "color": "#d3eaf7",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#aed9f1",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#8bc9eb",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#5a839a",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#314956",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "lupine",
+      "name": "Lupine",
+      "light": true,
+      "background": "#fafafa",
+      "brand": "#3264eb",
+      "gradient": [
+        {
+          "color": "#1c3781",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#274eb7",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#3264eb",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#7392e6",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#aab9e2",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "matte-black",
+      "name": "Matte Black",
+      "light": false,
+      "background": "#121212",
+      "brand": "#e68e0d",
+      "gradient": [
+        {
+          "color": "#f6d4a3",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#eeb056",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#e68e0d",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#925b0b",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#4b310a",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "miasma",
+      "name": "Miasma",
+      "light": false,
+      "background": "#222222",
+      "brand": "#78824b",
+      "gradient": [
+        {
+          "color": "#ccd0bb",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a0a881",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#78824b",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#515735",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#313423",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "light": false,
+      "background": "#2e3440",
+      "brand": "#81a1c1",
+      "gradient": [
+        {
+          "color": "#cfdbe7",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a7bdd4",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#81a1c1",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#596e85",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#384452",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "osaka-jade",
+      "name": "Osaka Jade",
+      "light": false,
+      "background": "#111c18",
+      "brand": "#509475",
+      "gradient": [
+        {
+          "color": "#bcd6cb",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#84b49e",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#509475",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#35614d",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#1e372c",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "retro-82",
+      "name": "Retro 82",
+      "light": false,
+      "background": "#05182e",
+      "brand": "#faa968",
+      "gradient": [
+        {
+          "color": "#fddec6",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#fcc395",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#faa968",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#9c6d49",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#4c3b2f",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "ristretto",
+      "name": "Ristretto",
+      "light": false,
+      "background": "#2c2525",
+      "brand": "#f38d70",
+      "gradient": [
+        {
+          "color": "#fad4c9",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#f7af9b",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#f38d70",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#a05f4d",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#5a3830",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "rose-pine",
+      "name": "Rosé Pine",
+      "light": true,
+      "background": "#faf4ed",
+      "brand": "#56949f",
+      "gradient": [
+        {
+          "color": "#2f5157",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#43737c",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#56949f",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#8bafb4",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#b7c6c5",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "solitude",
+      "name": "Solitude",
+      "light": false,
+      "background": "#101315",
+      "brand": "#798186",
+      "gradient": [
+        {
+          "color": "#cccfd1",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#a1a7aa",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#798186",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#4e5457",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#2a2e30",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "light": false,
+      "background": "#1a1b26",
+      "brand": "#9ece6a",
+      "gradient": [
+        {
+          "color": "#daecc6",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#bbdd97",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#9ece6a",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#678549",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#39482e",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "vantablack",
+      "name": "Vantablack",
+      "light": false,
+      "background": "#000000",
+      "brand": "#8d8d8d",
+      "gradient": [
+        {
+          "color": "#d4d4d4",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#afafaf",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#8d8d8d",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#5a5a5a",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#2f2f2f",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "light": true,
+      "background": "#ffffff",
+      "brand": "#6e6e6e",
+      "gradient": [
+        {
+          "color": "#3c3c3c",
+          "from": 0,
+          "to": 26.316
+        },
+        {
+          "color": "#565656",
+          "from": 26.316,
+          "to": 36.842
+        },
+        {
+          "color": "#6e6e6e",
+          "from": 36.842,
+          "to": 57.895
+        },
+        {
+          "color": "#9c9c9c",
+          "from": 57.895,
+          "to": 73.684
+        },
+        {
+          "color": "#c3c3c3",
+          "from": 73.684,
+          "to": 100
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "id": "en",
+      "name": "English",
+      "direction": "ltr",
+      "headline": "Beautiful, fun & agentic Linux",
+      "attribution": "by DHH",
+      "tagline": "Beautiful, fun & agentic Linux by DHH"
+    },
+    {
+      "id": "da",
+      "name": "Dansk",
+      "direction": "ltr",
+      "headline": "Smukt, sjovt Linux med agenter",
+      "attribution": "fra DHH",
+      "tagline": "Smukt, sjovt Linux med agenter fra DHH"
+    },
+    {
+      "id": "ar",
+      "name": "العربية",
+      "direction": "rtl",
+      "headline": "لينكس جميل وممتع يعمل مع وكلاء الذكاء الاصطناعي",
+      "attribution": "من إعداد DHH",
+      "tagline": "لينكس جميل وممتع يعمل مع وكلاء الذكاء الاصطناعي من إعداد DHH"
+    },
+    {
+      "id": "fi",
+      "name": "Suomi",
+      "direction": "ltr",
+      "headline": "Kaunis, hauska ja agentteja hyödyntävä Linux",
+      "attribution": "– tekijä: DHH",
+      "tagline": "Kaunis, hauska ja agentteja hyödyntävä Linux – tekijä: DHH"
+    },
+    {
+      "id": "fr",
+      "name": "Français",
+      "direction": "ltr",
+      "headline": "Un Linux beau, ludique et agentique",
+      "attribution": "par DHH",
+      "tagline": "Un Linux beau, ludique et agentique par DHH"
+    },
+    {
+      "id": "el",
+      "name": "Ελληνικά",
+      "direction": "ltr",
+      "headline": "Όμορφο, διασκεδαστικό Linux με πράκτορες AI",
+      "attribution": "από DHH",
+      "tagline": "Όμορφο, διασκεδαστικό Linux με πράκτορες AI από DHH"
+    },
+    {
+      "id": "hu",
+      "name": "Magyar",
+      "direction": "ltr",
+      "headline": "Szép, szórakoztató Linux, ügynökökkel",
+      "attribution": "készítette: DHH",
+      "tagline": "Szép, szórakoztató Linux, ügynökökkel készítette: DHH"
+    },
+    {
+      "id": "hi",
+      "name": "हिन्दी",
+      "direction": "ltr",
+      "headline": "सुंदर, मज़ेदार और एजेंटों के साथ काम करने वाला Linux",
+      "attribution": "द्वारा DHH",
+      "tagline": "सुंदर, मज़ेदार और एजेंटों के साथ काम करने वाला Linux द्वारा DHH"
+    },
+    {
+      "id": "is",
+      "name": "Íslenska",
+      "direction": "ltr",
+      "headline": "Fallegt og skemmtilegt Linux með gervigreindarþjónum",
+      "attribution": "frá DHH",
+      "tagline": "Fallegt og skemmtilegt Linux með gervigreindarþjónum frá DHH"
+    },
+    {
+      "id": "ja",
+      "name": "日本語",
+      "direction": "ltr",
+      "headline": "美しく、楽しく、エージェントと使うLinux",
+      "attribution": "作者： DHH",
+      "tagline": "美しく、楽しく、エージェントと使うLinux 作者： DHH"
+    },
+    {
+      "id": "ko",
+      "name": "한국어",
+      "direction": "ltr",
+      "headline": "아름답고 즐거운, 에이전트와 함께하는 Linux",
+      "attribution": "제작: DHH",
+      "tagline": "아름답고 즐거운, 에이전트와 함께하는 Linux 제작: DHH"
+    },
+    {
+      "id": "es-MX",
+      "name": "Español (México)",
+      "direction": "ltr",
+      "headline": "Linux bello, divertido y agentivo",
+      "attribution": "por DHH",
+      "tagline": "Linux bello, divertido y agentivo por DHH"
+    },
+    {
+      "id": "fil",
+      "name": "Filipino",
+      "direction": "ltr",
+      "headline": "Maganda, masaya, at may mga AI agent na Linux",
+      "attribution": "ni DHH",
+      "tagline": "Maganda, masaya, at may mga AI agent na Linux ni DHH"
+    },
+    {
+      "id": "pt",
+      "name": "Português",
+      "direction": "ltr",
+      "headline": "Linux bonito, divertido e com agentes",
+      "attribution": "por DHH",
+      "tagline": "Linux bonito, divertido e com agentes por DHH"
+    },
+    {
+      "id": "sv",
+      "name": "Svenska",
+      "direction": "ltr",
+      "headline": "Vackert, roligt och agentdrivet Linux",
+      "attribution": "av DHH",
+      "tagline": "Vackert, roligt och agentdrivet Linux av DHH"
+    },
+    {
+      "id": "tr",
+      "name": "Türkçe",
+      "direction": "ltr",
+      "headline": "Güzel, eğlenceli ve ajanlarla çalışan Linux",
+      "attribution": "hazırlayan DHH",
+      "tagline": "Güzel, eğlenceli ve ajanlarla çalışan Linux hazırlayan DHH"
+    },
+    {
+      "id": "vi",
+      "name": "Tiếng Việt",
+      "direction": "ltr",
+      "headline": "Linux đẹp, vui và có tác tử AI",
+      "attribution": "bởi DHH",
+      "tagline": "Linux đẹp, vui và có tác tử AI bởi DHH"
+    },
+    {
+      "id": "ur",
+      "name": "اردو",
+      "direction": "rtl",
+      "headline": "خوب صورت، پُرلطف اور ایجنٹس کے ساتھ کام کرنے والا Linux",
+      "attribution": "از DHH",
+      "tagline": "خوب صورت، پُرلطف اور ایجنٹس کے ساتھ کام کرنے والا Linux از DHH"
+    },
+    {
+      "id": "bn",
+      "name": "বাংলা",
+      "direction": "ltr",
+      "headline": "সুন্দর, আনন্দময় ও এজেন্টের সঙ্গে কাজ করা Linux",
+      "attribution": "তৈরি করেছেন DHH",
+      "tagline": "সুন্দর, আনন্দময় ও এজেন্টের সঙ্গে কাজ করা Linux তৈরি করেছেন DHH"
+    },
+    {
+      "id": "ca",
+      "name": "Català",
+      "direction": "ltr",
+      "headline": "Linux bonic, divertit i amb agents",
+      "attribution": "de DHH",
+      "tagline": "Linux bonic, divertit i amb agents de DHH"
+    },
+    {
+      "id": "si",
+      "name": "සිංහල",
+      "direction": "ltr",
+      "headline": "ලස්සන, විනෝදජනක, AI ඒජන්තයන් සමඟ වැඩ කරන Linux",
+      "attribution": "නිර්මාණය කළේ DHH",
+      "tagline": "ලස්සන, විනෝදජනක, AI ඒජන්තයන් සමඟ වැඩ කරන Linux නිර්මාණය කළේ DHH"
+    },
+    {
+      "id": "ta",
+      "name": "தமிழ்",
+      "direction": "ltr",
+      "headline": "அழகான, மகிழ்ச்சியான, AI முகவர்களுடன் இயங்கும் Linux",
+      "attribution": "உருவாக்கியவர் DHH",
+      "tagline": "அழகான, மகிழ்ச்சியான, AI முகவர்களுடன் இயங்கும் Linux உருவாக்கியவர் DHH"
+    },
+    {
+      "id": "th",
+      "name": "ไทย",
+      "direction": "ltr",
+      "headline": "Linux ที่สวย สนุก และมีเอเจนต์",
+      "attribution": "โดย DHH",
+      "tagline": "Linux ที่สวย สนุก และมีเอเจนต์ โดย DHH"
+    },
+    {
+      "id": "uz",
+      "name": "Oʻzbekcha",
+      "direction": "ltr",
+      "headline": "Chiroyli, zavqli va agentli Linux",
+      "attribution": "muallif: DHH",
+      "tagline": "Chiroyli, zavqli va agentli Linux muallif: DHH"
+    },
+    {
+      "id": "it",
+      "name": "Italiano",
+      "direction": "ltr",
+      "headline": "Linux bello, divertente e con gli agenti IA",
+      "attribution": "di DHH",
+      "tagline": "Linux bello, divertente e con gli agenti IA di DHH"
+    },
+    {
+      "id": "zh-CN",
+      "name": "简体中文",
+      "direction": "ltr",
+      "headline": "好看、好玩、Agent 原生的 Linux",
+      "attribution": "由 DHH 亲自打造",
+      "tagline": "好看、好玩、Agent 原生的 Linux 由 DHH 亲自打造"
+    },
+    {
+      "id": "pl",
+      "name": "Polski",
+      "direction": "ltr",
+      "headline": "Piękny, przyjemny Linux z agentami",
+      "attribution": "autor: DHH",
+      "tagline": "Piękny, przyjemny Linux z agentami autor: DHH"
+    },
+    {
+      "id": "lt",
+      "name": "Lietuvių",
+      "direction": "ltr",
+      "headline": "Gražus, smagus „Linux“ su agentais",
+      "attribution": "autorius DHH",
+      "tagline": "Gražus, smagus „Linux“ su agentais autorius DHH"
+    },
+    {
+      "id": "ga",
+      "name": "Gaeilge",
+      "direction": "ltr",
+      "headline": "Linux álainn, spraíúil agus gníomhaíoch",
+      "attribution": "le DHH",
+      "tagline": "Linux álainn, spraíúil agus gníomhaíoch le DHH"
+    },
+    {
+      "id": "nl",
+      "name": "Nederlands",
+      "direction": "ltr",
+      "headline": "Mooi, leuk & agentic Linux",
+      "attribution": "door DHH",
+      "tagline": "Mooi, leuk & agentic Linux door DHH"
+    },
+    {
+      "id": "no",
+      "name": "Norsk",
+      "direction": "ltr",
+      "headline": "Vakker, morsom og agentisk Linux",
+      "attribution": "av DHH",
+      "tagline": "Vakker, morsom og agentisk Linux av DHH"
+    }
+  ]
+}

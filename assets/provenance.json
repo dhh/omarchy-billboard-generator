@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "publication": "Redistributed with permission. See PROVENANCE.md and LICENSE for scope and third-party rights.",
+  "files": [
+    {
+      "file": "assets/runtime/laseretch.wasm",
+      "sha256": "49d94d3bcfdfc68a9623e32ce4b3c8129ee8e124970d728c34f91d9d1f003c6c",
+      "modified": true,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license.",
+      "modification": "Equal-length redaction of compiler home-directory prefixes in diagnostic strings. Instructions and binary layout unchanged."
+    },
+    {
+      "file": "assets/runtime/ttfx.js",
+      "sha256": "4444d2f442af28a02e1d84c3dd2daf4db5067d175f48f53f2d3c0a3078195d3e",
+      "modified": false,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "assets/runtime/assets/playback.js",
+      "sha256": "b0a60a61b8d5b1f142ea7bcdff1219aaae701cdcc551f439234258480ab21594",
+      "modified": false,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "assets/runtime/logo.txt",
+      "sha256": "c9f1681511bf4315e97e8d956eadf72695456fcfd2d028598bed3964d63110e1",
+      "modified": false,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "assets/official-wordmark.svg",
+      "sha256": "be58c4b721a666f23fb9e756a39cbd62868c6717e36d4beed8fe8035bae54222",
+      "modified": false,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license.",
+      "source": {
+        "repository": "omacom/omarchy-site",
+        "commit": "5f908e4a85b8a4594be73db725906cf656660823",
+        "path": "brand/omarchy-wordmark.svg",
+        "sha256": "be58c4b721a666f23fb9e756a39cbd62868c6717e36d4beed8fe8035bae54222"
+      }
+    },
+    {
+      "file": "assets/Delta-Corps-Priest-1.flf",
+      "sha256": "5065f00aa615c5e2fa18e9f7871628cb0384e9d9154d1531096e3adc0d84d41f",
+      "modified": false,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "web/independent-sparks.js",
+      "sha256": "b0c9d237d52fc3f27697070babf08d08c100958bb5add8091576db1343c276b8",
+      "modified": true,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "web/glyph-piles.js",
+      "sha256": "e36fdb1eea2990beef540b0fe50b67c4bf9f4c617e21417b62956e0beeb7ee1b",
+      "modified": true,
+      "rights": "Redistributed with permission; third-party rights are not replaced by the project license."
+    },
+    {
+      "file": "assets/fonts/JetBrainsMono-Regular.woff2",
+      "sha256": "a9cb1cd82332b23a47e3a1239d25d13c86d16c4220695e34b243effa999f45f2",
+      "modified": false,
+      "rights": "SIL Open Font License 1.1; see assets/fonts/JetBrainsMono-OFL.txt",
+      "source": {
+        "repository": "omacom/omarchy-site",
+        "commit": "5f908e4a85b8a4594be73db725906cf656660823",
+        "path": "assets/fonts/JetBrainsMono-Regular.woff2",
+        "sha256": "a9cb1cd82332b23a47e3a1239d25d13c86d16c4220695e34b243effa999f45f2"
+      }
+    },
+    {
+      "file": "assets/fonts/JetBrainsMono-Bold.woff2",
+      "sha256": "c503cc5ec5f8b2c7666b7ecda1adf44bd45f2e6579b2eba0fc292150416588a2",
+      "modified": false,
+      "rights": "SIL Open Font License 1.1; see assets/fonts/JetBrainsMono-OFL.txt",
+      "source": {
+        "repository": "omacom/omarchy-site",
+        "commit": "5f908e4a85b8a4594be73db725906cf656660823",
+        "path": "assets/fonts/JetBrainsMono-Bold.woff2",
+        "sha256": "c503cc5ec5f8b2c7666b7ecda1adf44bd45f2e6579b2eba0fc292150416588a2"
+      }
+    }
+  ]
+}

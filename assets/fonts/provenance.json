@@ -1,0 +1,149 @@
+[
+  {
+    "file": "assets/fonts/NotoSansJP.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansjp/NotoSansJP[wght].ttf",
+    "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f"
+  },
+  {
+    "file": "assets/fonts/notosansjp-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansjp/OFL.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "file": "assets/fonts/NotoSansArabic.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf",
+    "sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e"
+  },
+  {
+    "file": "assets/fonts/notosansarabic-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansarabic/OFL.txt",
+    "sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96"
+  },
+  {
+    "file": "assets/fonts/JetBrainsMono-OFL.txt",
+    "repository": "JetBrains/JetBrainsMono",
+    "commit": "19371302b95d218af43299bce79ddbddd0bc364d",
+    "path": "OFL.txt",
+    "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697"
+  },
+  {
+    "file": "assets/fonts/NotoSans.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosans/NotoSans[wdth,wght].ttf",
+    "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d"
+  },
+  {
+    "file": "assets/fonts/notosans-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosans/OFL.txt",
+    "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+  },
+  {
+    "file": "assets/fonts/NotoSansSC.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanssc/NotoSansSC[wght].ttf",
+    "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+  },
+  {
+    "file": "assets/fonts/notosanssc-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanssc/OFL.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "file": "assets/fonts/NotoSansKR.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanskr/NotoSansKR[wght].ttf",
+    "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+  },
+  {
+    "file": "assets/fonts/notosanskr-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanskr/OFL.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "file": "assets/fonts/NotoSansDevanagari.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansdevanagari/NotoSansDevanagari[wdth,wght].ttf",
+    "sha256": "14ec4af41f27482216d1c2229f417ff9b1425e1babb014e57d1d40d03229853e"
+  },
+  {
+    "file": "assets/fonts/notosansdevanagari-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansdevanagari/OFL.txt",
+    "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331"
+  },
+  {
+    "file": "assets/fonts/NotoSansBengali.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansbengali/NotoSansBengali[wdth,wght].ttf",
+    "sha256": "dcd42978094e584a849c84a51450eeac40c8826057d566ea6d4b9627a403a05a"
+  },
+  {
+    "file": "assets/fonts/notosansbengali-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansbengali/OFL.txt",
+    "sha256": "754f0e221aa7d5a915489f3bf1f20fe53ddc35ab2834a4d91656d78f9622de70"
+  },
+  {
+    "file": "assets/fonts/NotoSansSinhala.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanssinhala/NotoSansSinhala[wdth,wght].ttf",
+    "sha256": "9bd93e407a278075be403324063bc94a7e306c44de4df81214e932330c22eecf"
+  },
+  {
+    "file": "assets/fonts/notosanssinhala-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanssinhala/OFL.txt",
+    "sha256": "2d6f7c43bce61f4b1919379f901bc613484f5285f520b6d29bb7c1f31b17e841"
+  },
+  {
+    "file": "assets/fonts/NotoSansTamil.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanstamil/NotoSansTamil[wdth,wght].ttf",
+    "sha256": "aa3a9b321f4b0bb2c40203ffbde9af89713227866e0e13f76e5b9eeea727cf88"
+  },
+  {
+    "file": "assets/fonts/notosanstamil-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosanstamil/OFL.txt",
+    "sha256": "f8ff8ce7d0a81bf8d5e121c635ef027250c531f2fd37d5988b8dd6e45f19d7f1"
+  },
+  {
+    "file": "assets/fonts/NotoSansThai.ttf",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansthai/NotoSansThai[wdth,wght].ttf",
+    "sha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8"
+  },
+  {
+    "file": "assets/fonts/notosansthai-OFL.txt",
+    "repository": "google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "path": "ofl/notosansthai/OFL.txt",
+    "sha256": "2e98fd23a52d253db8612cd5942c8f2ff4111b21d2367050fdca91d8ccc374a0"
+  }
+]

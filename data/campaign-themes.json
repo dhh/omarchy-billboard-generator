@@ -1,0 +1,64 @@
+{
+  "source": {
+    "name": "Campaign palettes",
+    "sha256": "55f2af668864c5fa36f6fd5eace0ee61f5f0abdf93ab3145a625a7c134a091b4"
+  },
+  "themes": [
+    {
+      "id": "astral",
+      "name": "Astral",
+      "sourceId": "blue",
+      "background": "#000000",
+      "brand": "#89b4fa",
+      "cursor": "#7dcfff",
+      "bands": [
+        "#ffffff",
+        "#d9f4ff",
+        "#9beaff",
+        "#5de0ff",
+        "#3edbff",
+        "#00d1ff",
+        "#1e9cde",
+        "#3082d0",
+        "#544eb4",
+        "#781a98"
+      ],
+      "stops": [
+        0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1
+      ]
+    },
+    {
+      "id": "danish-dynamite",
+      "name": "Danish Dynamite",
+      "sourceId": "dk",
+      "background": "#000000",
+      "brand": "#ffffff",
+      "cursor": "#f68586",
+      "bands": [
+        "#fefefe",
+        "#f68586",
+        "#ec0518",
+        "#a9011c",
+        "#630217"
+      ],
+      "stops": [
+        0,
+        0.2571428571428571,
+        0.4023809523809524,
+        0.6333333333333333,
+        0.8119047619047619,
+        1
+      ]
+    }
+  ]
+}

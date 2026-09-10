@@ -1,0 +1,48 @@
+{
+  "name": "omarchy-billboard-generator",
+  "version": "0.1.0-dev",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "omarchy-billboard": "bin/omarchy-billboard",
+    "omarchy-billboard-app": "bin/omarchy-billboard-app"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "npm run lint && node --import ./test/environment.js --test test/*.test.js",
+    "lint": "node scripts/check-complexity.mjs",
+    "complexity": "node scripts/check-complexity.mjs --report",
+    "test:custom-themes": "node --import ./test/environment.js test/custom-themes.mjs",
+    "test:cli": "node --import ./test/environment.js test/cli.mjs",
+    "test:canvas-effects": "node --import ./test/environment.js test/canvas-effects.mjs",
+    "test:animations": "node --import ./test/environment.js test/animations.mjs",
+    "test:visual": "node --import ./test/environment.js test/visual.mjs",
+    "test:integration": "node --import ./test/environment.js test/integration.mjs",
+    "test:experimental": "node --import ./test/environment.js test/experimental.mjs",
+    "test:app": "node --import ./test/environment.js test/app-ui.mjs",
+    "test:app-window": "node --import ./test/environment.js test/app-window.mjs",
+    "app": "node bin/omarchy-billboard-app",
+    "start": "node bin/omarchy-billboard",
+    "test:install": "node --import ./test/environment.js test/install.mjs",
+    "audit:public": "node scripts/audit-public.mjs"
+  },
+  "dependencies": {
+    "fontkit": "^2.0.4",
+    "playwright-core": "^1.63.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.10.0"
+  },
+  "description": "Local Omarchy billboard video generator with a desktop app and CLI",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llstrk/omarchy-billboard-generator.git"
+  },
+  "homepage": "https://github.com/llstrk/omarchy-billboard-generator#readme",
+  "bugs": {
+    "url": "https://github.com/llstrk/omarchy-billboard-generator/issues"
+  }
+}

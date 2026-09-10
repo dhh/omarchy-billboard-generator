@@ -1,0 +1,42 @@
+{
+  "repository": "omacom/omarchy-site",
+  "commit": "47711270650b9c78c7bfa996cdd0b6050c79566f",
+  "path": "src/lib/etch.ts",
+  "bindingVersion": "0.3.2",
+  "files": [
+    {
+      "file": "ttfx.js",
+      "path": "public/ttfx/0.3.2/ttfx.js",
+      "sha256": "d64a52fd12b7d775a42afbe5525d4b6cf23e8a45435d9deed0cc2e7bd88559fe",
+      "transformation": "Unmodified upstream bytes"
+    },
+    {
+      "file": "all.wasm",
+      "path": "public/ttfx/effects/all.wasm",
+      "sha256": "1a54135e440311e5f3e9f47c8fb759f997b0034eb10304e9842312a357f41f80",
+      "transformation": "Equal-length redaction of compiler home-directory prefixes in diagnostic strings. Instructions and binary layout unchanged.",
+      "sourceSha256": "d43fc55e05699b38eb3f372f73055e55a789b46e9149e49cd0f24813653d2d1a"
+    },
+    {
+      "file": "bitmap.json",
+      "path": "src/data/wordmark-bitmap.ts",
+      "sha256": "e27c50a2c68f867524fa2c4975f4186cb408d029cf2feb299e323dcc1964cf34",
+      "transformation": "Data-only extraction of bitmap dimensions and binary rows"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/lib/etch.ts",
+      "sha256": "536f963fbc319cfd635d09fee842c6985b854c03c88b33310b27f0d6b6a09624"
+    },
+    {
+      "path": "src/data/wordmark-bitmap.ts",
+      "sha256": "2f986d4dd53f731cb67d274abaaa941769d864bc84408211dd86c170accdbd1f"
+    },
+    {
+      "path": "src/components/HeroPixelField.tsx",
+      "sha256": "22441f9a49f95eb11591d4f9f5ee537fbc8a27e8fc1730a1e6caf1331f9b545f"
+    }
+  ],
+  "rights": "Redistributed with permission. Third-party rights are not replaced by the project license."
+}

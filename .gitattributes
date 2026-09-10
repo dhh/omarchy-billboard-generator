@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve pinned asset bytes, including font artwork and license texts.
+assets/** -text
+assets/fonts/*-OFL.txt -whitespace

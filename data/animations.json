@@ -1,0 +1,231 @@
+{
+  "provenance": {
+    "repository": "omacom/omarchy-site",
+    "commit": "47711270650b9c78c7bfa996cdd0b6050c79566f",
+    "path": "src/lib/etch.ts"
+  },
+  "effects": [
+    {
+      "id": "beams",
+      "name": "beams",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "binarypath",
+      "name": "binarypath",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "blackhole",
+      "name": "blackhole",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "bouncyballs",
+      "name": "bouncyballs",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "bubbles",
+      "name": "bubbles",
+      "origin": "website",
+      "stepsPerSecond": 320
+    },
+    {
+      "id": "burn",
+      "name": "burn",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "colorshift",
+      "name": "colorshift",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "crumble",
+      "name": "crumble",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "decrypt",
+      "name": "decrypt",
+      "origin": "website",
+      "stepsPerSecond": 300
+    },
+    {
+      "id": "errorcorrect",
+      "name": "errorcorrect",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "expand",
+      "name": "expand",
+      "origin": "website",
+      "stepsPerSecond": 100
+    },
+    {
+      "id": "fireworks",
+      "name": "fireworks",
+      "origin": "website",
+      "stepsPerSecond": 300
+    },
+    {
+      "id": "highlight",
+      "name": "highlight",
+      "origin": "website",
+      "stepsPerSecond": 100
+    },
+    {
+      "id": "laseretch",
+      "name": "laseretch",
+      "origin": "website",
+      "stepsPerSecond": 400
+    },
+    {
+      "id": "matrix",
+      "name": "matrix",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "middleout",
+      "name": "middleout",
+      "origin": "website",
+      "stepsPerSecond": 100
+    },
+    {
+      "id": "orbittingvolley",
+      "name": "orbittingvolley",
+      "origin": "website",
+      "stepsPerSecond": 300
+    },
+    {
+      "id": "overflow",
+      "name": "overflow",
+      "origin": "website",
+      "stepsPerSecond": 60
+    },
+    {
+      "id": "pour",
+      "name": "pour",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "print",
+      "name": "print",
+      "origin": "website",
+      "stepsPerSecond": 360
+    },
+    {
+      "id": "rain",
+      "name": "rain",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "randomsequence",
+      "name": "randomsequence",
+      "origin": "website",
+      "stepsPerSecond": 150
+    },
+    {
+      "id": "rings",
+      "name": "rings",
+      "origin": "website",
+      "stepsPerSecond": 360
+    },
+    {
+      "id": "scattered",
+      "name": "scattered",
+      "origin": "website",
+      "stepsPerSecond": 150
+    },
+    {
+      "id": "slice",
+      "name": "slice",
+      "origin": "website",
+      "stepsPerSecond": 120
+    },
+    {
+      "id": "slide",
+      "name": "slide",
+      "origin": "website",
+      "stepsPerSecond": 120
+    },
+    {
+      "id": "smoke",
+      "name": "smoke",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "spotlights",
+      "name": "spotlights",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "spray",
+      "name": "spray",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "swarm",
+      "name": "swarm",
+      "origin": "website",
+      "stepsPerSecond": 720
+    },
+    {
+      "id": "sweep",
+      "name": "sweep",
+      "origin": "website",
+      "stepsPerSecond": 150
+    },
+    {
+      "id": "synthgrid",
+      "name": "synthgrid",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "thunderstorm",
+      "name": "thunderstorm",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "unstable",
+      "name": "unstable",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "vhstape",
+      "name": "vhstape",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "waves",
+      "name": "waves",
+      "origin": "website",
+      "stepsPerSecond": 240
+    },
+    {
+      "id": "wipe",
+      "name": "wipe",
+      "origin": "website",
+      "stepsPerSecond": 100
+    }
+  ]
+}

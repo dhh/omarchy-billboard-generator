@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark"><title>Omarchy Billboard Generator</title>
+  <link rel="icon" href="/app/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/app/style.css">
+  <link rel="stylesheet" href="/api/desktop-theme.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="identity"><img src="/app/icon.svg" alt="" width="38" height="38"><div><h1>Billboard Generator</h1><p>OMARCHY / COMMUNITY EDITION</p></div></div>
+    <div class="header-actions"><button id="sync" class="quiet">Sync website data</button></div>
+  </header>
+  <main>
+    <aside class="controls">
+      <form id="form">
+        <fieldset id="settings">
+          <legend>01 / COMPOSITION</legend>
+          <label for="tld">Domain suffix</label>
+          <div class="domain-field"><span>OMARCHY</span><input id="tld" name="tld" value=".org" autocomplete="off" spellcheck="false"></div>
+          <label for="language">Tagline language</label><select id="language" name="language"></select>
+          <p id="tagline-copy" class="tagline-copy"></p>
+          <label for="theme">Billboard theme</label><select id="theme" name="theme"></select>
+          <button id="import-theme" class="quiet" type="button">Import theme</button>
+          <input id="theme-file" type="file" accept=".json,application/json" aria-label="Import a JSON theme file" hidden>
+          <div id="palette" class="palette" aria-label="Selected theme colors"></div>
+          <label for="animation">Animation</label><select id="animation" name="animation"></select>
+          <label for="background">Background</label>
+          <select id="background" name="background"><option value="theme">Theme</option><option value="black">Black</option><option value="white">White</option></select>
+          <p class="hint">Override the canvas background.</p>
+          <div class="section-label">02 / CANVAS</div>
+          <label for="preset">Resolution preset</label>
+          <select id="preset" name="preset">
+            <option value="900x240">900 × 240 · Reference billboard</option>
+            <option value="900x480">900 × 480 · Taller billboard</option>
+            <option value="1920x1080">1920 × 1080 · Full HD</option>
+            <option value="3840x2160">3840 × 2160 · 4K</option>
+            <option value="1080x1920">1080 × 1920 · Portrait</option>
+            <option value="1080x1080">1080 × 1080 · Square</option>
+            <option value="custom">Custom dimensions</option>
+          </select>
+          <div id="dimensions" class="dimensions" hidden><div><label for="width">Width</label><input id="width" name="width" type="number" min="1" step="1" value="900" required></div><span>×</span><div><label for="height">Height</label><input id="height" name="height" type="number" min="1" step="1" value="240" required></div><span class="unit">px</span></div>
+        </fieldset>
+        <fieldset id="output-settings">
+          <legend>03 / EXPORT</legend>
+          <div class="filename-heading"><label for="filename">Filename</label><label class="check"><input id="autoname" name="autoname" type="checkbox" checked> Auto</label></div>
+          <input id="filename" name="filename" value="omarchy-org-en.mp4" spellcheck="false" autocomplete="off" readonly required>
+          <p id="output-directory" class="hint path">Saved in your Videos folder.</p>
+          <div class="export-toggles"><label class="check"><input id="force" name="force" type="checkbox"> Overwrite</label><label class="check"><input id="auto-play" name="auto-play" type="checkbox"> Auto play</label></div>
+          <button id="export" class="primary" type="submit" disabled><span>Export MP4</span><span aria-hidden="true">↗</span></button>
+          <p class="export-spec">15 seconds · 25 fps · H.264 · No audio</p>
+        </fieldset>
+      </form>
+    </aside>
+    <section class="workspace" aria-label="Preview and export">
+      <div class="preview-heading"><div><h2 id="view-title">Live preview</h2></div><div class="preview-badges"><span id="canvas-size" class="badge">900 × 240</span><span id="phase" class="badge">Domain hold</span></div></div>
+      <div class="stage" id="stage">
+        <div id="preview-mount" class="preview-mount"></div>
+        <div id="loading" class="loading"><span class="spinner"></span><span id="loading-text">Preparing native effects…</span></div>
+      </div>
+      <div id="timeline" class="timeline">
+        <div class="transport"><button id="play" class="transport-button" disabled aria-pressed="false">Play</button><button id="restart" class="quiet" disabled aria-label="Restart preview">↺</button><label class="sr-only" for="scrubber">Preview frame</label><input id="scrubber" type="range" min="0" max="374" step="1" value="295" disabled><output id="time" for="scrubber">11.80 / 15.00 s</output></div>
+        <div class="chapters"><button data-frame="0">Animation <span>0s</span></button><button data-frame="125">Tagline <span>5s</span></button><button data-frame="238">Domain reveal <span>9.5s</span></button><button data-frame="263">Hold <span>10.5s</span></button></div>
+      </div>
+      <div class="preview-note"><span id="preview-detail">Same native renderer as the CLI. Preview fits this window.</span><span id="frame-number">FRAME 295 / 374</span></div>
+      <div id="error" class="error" role="alert" hidden></div>
+      <section id="warnings" class="warnings" hidden><h3>Preview notes</h3><ul id="warning-list"></ul></section>
+      <section id="job-panel" class="job-panel" aria-live="polite" hidden>
+        <div class="job-heading"><div><span class="eyebrow" id="job-status">EXPORTING</span><h3 id="job-name"></h3></div><button id="cancel" class="quiet danger">Cancel export</button></div>
+        <progress id="progress" max="100" value="0" aria-label="Export progress"></progress>
+        <p id="job-message"></p>
+        <div id="result-actions" class="result-actions" hidden><button id="open-player" class="quiet">Open in player</button><button id="open-folder" class="quiet">Open output folder</button></div>
+      </section>
+      <footer><span id="source">Loading pinned website data…</span><span>Made locally. No upload. No account.</span></footer>
+    </section>
+  </main>
+  <script type="module" src="/app/ui.js"></script>
+</body>
+</html>

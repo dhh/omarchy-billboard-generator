@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+import { fileURLToPath } from 'node:url';
+import { loadSnapshot, syncSnapshot } from '../src/snapshot.js';
+import { parseOptions } from '../src/options.js';
+import { availableThemes } from '../src/themes.js';
+import { animations } from '../src/animations.js';
+
+const help = `Usage: omarchy-billboard [options]
+       omarchy-billboard sync [--revision COMMIT]
+
+  --list-themes         List website and campaign themes and origins
+  --list-languages      List language codes, English names and taglines
+  --list-animations     List pinned website effects and the campaign effect
+  --animation ID        Opening effect from --list-animations
+  --tld .org            Domain suffix, including multi-label and IDN/Punycode
+  --language en         Any locale in --list-languages
+  --theme astral     Any theme in --list-themes
+  --theme-file FILE     Use a custom JSON palette instead of --theme
+  --background theme    Canvas background: theme, black or white
+  --resolution 900x240  Any positive WIDTHxHEIGHT, including square and portrait
+  --output omarchy.mp4  One 15-second, 25 fps H.264 MP4, no audio
+  --force               Replace an existing output only after successful encoding
+  -h, --help            Show this help
+
+The default animation is laseretch-campaign; laseretch selects the website version.
+Custom themes: see examples/aurora.json. Theme files are read-only and limited to 16 KiB.
+Relative output paths use your current directory. Existing files require --force.
+Odd dimensions are padded by one pixel for H.264/yuv420p.
+Set BILLBOARD_CHROMIUM, BILLBOARD_FFMPEG or BILLBOARD_FFPROBE to override executable detection.
+Sync updates website copy and palettes, not the pinned animation runtime.
+Sync and browser temporary files use the project-local .cache directory.
+Normal rendering never fetches upstream data or external assets.`;
+
+const controller = new AbortController();
+const interrupt = signal => { controller.abort(new Error(`Interrupted by ${signal}.`)); };
+const handlers = new Map(['SIGINT', 'SIGTERM', 'SIGHUP'].map(signal => [signal, () => interrupt(signal)]));
+for (const [signal, handler] of handlers) process.once(signal, handler);
+const cache = fileURLToPath(new URL('../.cache/upstream.json', import.meta.url));
+async function selectedSnapshot() {
+  try { return await loadSnapshot(cache); }
+  catch (error) {
+    if (error.code !== 'ENOENT') throw new Error(`Cached snapshot is invalid or unreadable at ${cache}: ${error.message}. Remove it to restore the bundled snapshot.`, { cause: error });
+    return loadSnapshot();
+  }
+}
+function listThemes(options, snapshot) {
+  for (const t of availableThemes(snapshot)) console.log(`${t.id}\t${t.name}\t${t.light ? 'light' : 'dark'}\t${t.origin}`);
+}
+function listLanguages(options, snapshot) {
+  const names = new Intl.DisplayNames(['en'], { type: 'language', languageDisplay: 'standard', fallback: 'none' });
+  for (const l of snapshot.languages) console.log(`${l.id}\t${names.of(l.id) ?? l.name}\t${l.direction}\t${l.tagline}`);
+}
+async function synchronize(options) {
+  const snapshot = await syncSnapshot(cache, { revision: options.revision, signal: controller.signal });
+  console.log(`Synced ${snapshot.repository}@${snapshot.commit}\nSnapshot: ${cache}`);
+}
+async function render(options, snapshot) {
+  const { renderVideo } = await import('../src/render.js');
+  await renderVideo(options, snapshot, { signal: controller.signal });
+}
+function listAnimations() {
+  for (const a of animations) console.log(`${a.id}\t${a.name}\t${a.origin}`);
+}
+const commands = new Map([['animations', listAnimations], ['themes', listThemes], ['languages', listLanguages], ['sync', synchronize], ['render', render]]);
+async function main(args) {
+  if (args.includes('--help') || args.includes('-h')) { console.log(help); return; }
+  const snapshot = await selectedSnapshot(), options = parseOptions(args, snapshot);
+  await commands.get(options.command)(options, snapshot);
+}
+try { await main(process.argv.slice(2)); }
+catch (error) {
+  console.error(`Error: ${controller.signal.aborted ? controller.signal.reason.message : error.message}`);
+  process.exitCode = controller.signal.aborted ? 130 : 1;
+} finally {
+  for (const [signal, handler] of handlers) process.removeListener(signal, handler);
+}
