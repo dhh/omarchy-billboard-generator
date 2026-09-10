@@ -9,8 +9,9 @@ if (!process.env.WAYLAND_DISPLAY) throw Error('Run this optional test inside an 
 const windows = () => JSON.parse(execFileSync('hyprctl', ['-j', 'clients'], { encoding: 'utf8' }));
 const before = new Set(windows().map(c => c.address));
 const cache = join(root, '.cache'); await mkdir(join(cache, 'app-ui'), { recursive: true });
-const oldDirectories = new Set(await readdir(cache));
-const child = spawn(process.execPath, ['bin/omarchy-billboard-app'], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, HOME: join(root, '.cache/test-home'), XDG_CONFIG_HOME: join(root, '.cache/test-home/config') } });
+const temporary = process.env.BILLBOARD_TEST_TMPDIR || cache; await mkdir(temporary, { recursive: true });
+const oldDirectories = new Set(await readdir(temporary));
+const child = spawn(process.execPath, ['bin/omarchy-billboard-app'], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, TMPDIR: temporary, HOME: join(root, '.cache/test-home'), XDG_CONFIG_HOME: join(root, '.cache/test-home/config') } });
 let stderr = '', stdout = ''; child.stderr.on('data', data => { stderr += data; });
 const exit = new Promise(resolve => child.on('close', resolve));
 const timer = setTimeout(() => child.kill('SIGTERM'), 25000);
@@ -36,7 +37,7 @@ try {
   await fetch(origin + '/api/shutdown', { method: 'POST', headers: { Cookie: cookie, Origin: origin, 'X-Billboard-Token': catalog.token, 'Content-Type': 'application/json' }, body: '{}' });
   }
   assert.equal(await exit, 0, stderr);
-  const leftover = (await readdir(cache)).filter(name => !oldDirectories.has(name) && (/^a[A-Za-z0-9]{6}$/.test(name) || name.startsWith('org.chromium.')));
+  const leftover = (await readdir(temporary)).filter(name => !oldDirectories.has(name) && (/^a[A-Za-z0-9]{6}$/.test(name) || /^\.?org\.chromium\./.test(name)));
   assert.deepEqual(leftover, [], 'Standalone window must remove its profile and singleton socket directories.');
   await writeFile(join(cache, 'app-ui/standalone-window.json'), JSON.stringify({ class: found.class, title: found.title, windowAppeared: true, cleanupPassed: true, shutdown: sighup ? 'SIGHUP' : 'API' }, null, 2) + '\n');
   console.log('Standalone Omarchy window launched, matched its desktop entry and closed cleanly.');
