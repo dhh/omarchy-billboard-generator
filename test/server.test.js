@@ -3,7 +3,15 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, rm, symlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { request } from 'node:http';
 import { serveRenderer } from '../src/server.js';
+
+function statusWithHost(url, host) {
+  return new Promise((resolve, reject) => {
+    const req = request(url, { headers: { Host: host } }, res => { res.resume(); resolve(res.statusCode); });
+    req.on('error', reject); req.end();
+  });
+}
 
 test('loopback server decodes names, restricts roots, rejects symlink escape and missing files', async t => {
   const root = await mkdtemp(join(tmpdir(), 'server-'));
@@ -24,4 +32,6 @@ test('loopback server decodes names, restricts roots, rejects symlink escape and
   assert.equal((await fetch(server.url + '/web/%FF')).status, 404);
   assert.equal((await fetch(server.url + '/config.json', { method: 'POST' })).status, 405);
   assert.deepEqual(await (await fetch(server.url + '/config.json')).json(), { tagline: '<not markup>' });
+  assert.equal(await statusWithHost(server.url + '/config.json', 'attacker.example'), 403);
+  assert.equal(await statusWithHost(server.url + '/config.json', new URL(server.url).host), 200);
 });
