@@ -179,13 +179,17 @@ async function writeEntries(entries, changes, previous) {
     changes.push({ ...entry, existing });
   }
 }
+async function restoreEntry(entry) {
+  if (await text(entry.path) !== entry.content) return;
+  if (entry.existing === null) await unlink(entry.path); else await atomicEntry(entry.path, entry.existing, entry.mode);
+}
 async function rollback(paths, changes, previousTarget) {
-  for (const entry of changes.reverse()) {
-    if (await text(entry.path) !== entry.content) continue;
-    if (entry.existing === null) await unlink(entry.path); else await atomicEntry(entry.path, entry.existing, entry.mode);
-  }
-  if (previousTarget) await switchCurrent(paths, previousTarget);
-  else await rm(join(paths.directory, 'current'), { force: true });
+  let failure;
+  const attempt = async operation => { try { await operation(); } catch (error) { failure ??= error; } };
+  // Launchers resolve through current, so it goes back first, and one failed restore must not skip the rest.
+  await attempt(() => previousTarget ? switchCurrent(paths, previousTarget) : rm(join(paths.directory, 'current'), { force: true }));
+  for (const entry of changes.reverse()) await attempt(() => restoreEntry(entry));
+  if (failure) throw failure;
 }
 async function retireEntries(entries, previous, changes) {
   for (const old of previous.entries) {
