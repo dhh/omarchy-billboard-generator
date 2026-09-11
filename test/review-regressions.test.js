@@ -32,7 +32,7 @@ test('background contrast warnings report a numeric ratio without changing artwo
   assert.match(backgroundWarnings({ ...options, theme: renderTheme(options, snapshot) }).join('\n'), /Low tagline contrast: 1\.\d+:1/);
   assert.deepEqual(backgroundWarnings({ background: 'black', theme: renderTheme({ ...options, background: 'black' }, snapshot) }), []);
   assert.deepEqual(backgroundWarnings({ background: 'white', theme: { background: '#ffffff', brand: '#000000' } }), []);
-  assert.deepEqual(backgroundWarnings({ background: 'theme' }), []);
+  assert.deepEqual(backgroundWarnings({ background: 'theme', theme: renderTheme({ ...options, background: 'theme' }, snapshot) }), []);
   assert.equal(contrastRatio('#000000', '#ffffff'), 21);
 });
 
