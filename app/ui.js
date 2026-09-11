@@ -104,7 +104,7 @@ function startPlayback() {
 function tick(time) {
   if (!playing) return;
   const elapsedFrames = (time - epoch) / 40;
-  const frame = Math.max(currentFrame, Math.floor(elapsedFrames));
+  const frame = Math.min(374, Math.max(currentFrame, Math.floor(elapsedFrames)));
   try { if (frame !== currentFrame) seek(frame); } catch (error) { stop(); showError(error.message); return; }
   // The final encoded frame starts at 14.96 s and remains visible until 15 s.
   if (elapsedFrames >= 375) stop(); else animation = requestAnimationFrame(tick);

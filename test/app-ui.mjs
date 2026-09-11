@@ -153,8 +153,8 @@ try {
   await writeFile(join(desktop, 'theme/colors.toml'), darkDesktop); await writeFile(join(desktop, 'theme.name'), 'tokyo-night');
   await page.waitForFunction(() => document.documentElement.dataset.desktopTheme === 'tokyo-night');
   report.checks.push('Interface follows dark/light desktop palette swaps without reloading or changing billboard selection or pixels.');
-  await page.locator('#play').click();
-  await page.waitForFunction(() => Number(document.getElementById('scrubber').value) < 125);
+  await page.locator('#restart').click(); await page.locator('#play').click();
+  await page.waitForFunction(() => Number(document.getElementById('scrubber').value) > 5);
   await page.locator('#play').click();
   await page.locator('#scrubber').evaluate(el => { el.value = '40'; el.dispatchEvent(new Event('input', { bubbles: true })); });
   assert.match(await page.locator('#frame-number').textContent(), /FRAME 40/);
