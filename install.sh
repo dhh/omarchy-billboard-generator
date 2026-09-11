@@ -29,4 +29,6 @@ const actual = crypto.createHash('sha256').update(fs.readFileSync(path.join(work
 if (expected !== actual) { console.error('Installer checksum mismatch. Nothing was installed.'); process.exit(1); }
 NODE
 export NODE_USE_ENV_PROXY="${NODE_USE_ENV_PROXY:-1}"
+# The release is already resolved; handing it over spares the installer a second, rate-limited API lookup.
+if [[ $# -eq 0 ]]; then set -- --version "$version"; fi
 node "$work/installer.mjs" "$@"
