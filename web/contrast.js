@@ -9,9 +9,7 @@ export function contrastRatio(a, b) {
 }
 
 export function backgroundWarnings(config) {
-  if (!config.background || config.background === 'theme') return [];
-  const messages = [];
   const ratio = contrastRatio(config.theme.background, config.theme.brand);
-  if (ratio < 3) messages.push(`Low tagline contrast: ${ratio.toFixed(2)}:1 against the ${config.background} background (below 3:1). Choose a different theme or background for better readability.`);
-  return messages;
+  if (ratio >= 3) return [];
+  return [`Low tagline contrast: ${ratio.toFixed(2)}:1 against the ${config.background ?? 'theme'} background (below 3:1). Choose a different theme or background for better readability.`];
 }
