@@ -92,6 +92,12 @@ try {
   await page.keyboard.press('Space');
   assert.equal(await page.locator('#play').getAttribute('aria-pressed'), 'true', 'Space also works inside the preview.');
   await page.keyboard.press('Space');
+  await page.locator('#scrubber').evaluate(input => { input.value = '300'; input.dispatchEvent(new Event('input')); });
+  assert.equal(await page.locator('#frame-number').innerText(), 'FRAME 300 / 374');
+  await page.locator('#play').click();
+  assert.ok(Number(/\d+/.exec(await page.locator('#frame-number').innerText())[0]) >= 300, 'Resuming inside the final hold must continue from the paused frame.');
+  await page.locator('#play').click();
+  await page.locator('#restart').click();
   await page.locator('#autoname').uncheck(); await page.locator('#filename').focus();
   const beforeSpace = await page.locator('#filename').inputValue();
   await page.keyboard.press('End'); await page.keyboard.press('Space');

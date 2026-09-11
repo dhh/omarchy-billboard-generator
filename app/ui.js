@@ -104,7 +104,8 @@ function startPlayback() {
 function tick(time) {
   if (!playing) return;
   const elapsedFrames = (time - epoch) / 40;
-  try { seek(Math.max(currentFrame, Math.floor(elapsedFrames))); } catch (error) { stop(); showError(error.message); return; }
+  const frame = Math.max(currentFrame, Math.floor(elapsedFrames));
+  try { if (frame !== currentFrame) seek(frame); } catch (error) { stop(); showError(error.message); return; }
   // The final encoded frame starts at 14.96 s and remains visible until 15 s.
   if (elapsedFrames >= 375) stop(); else animation = requestAnimationFrame(tick);
 }
@@ -116,7 +117,7 @@ function navigateTimeline(frame) {
 function play() {
   if (!previewId) return;
   if (playing) { stop(); return; }
-  if (currentFrame >= 263) seek(0);
+  if (currentFrame >= 374) seek(0);
   startPlayback();
 }
 function fitPreview() {
